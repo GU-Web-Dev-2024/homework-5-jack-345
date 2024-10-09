@@ -141,6 +141,11 @@
             { title: 'Starry Night Over the Rhône', artist: 'Vincent van Gogh', img: 'https://via.placeholder.com/200' }
         ];
 
+        //initializing variables
+        let viewedArt = 0;
+        let displayCount = document.getElementById("counter");
+        let artGrid = document.getElementsByClassName("art-grid")[0];
+
         let artDiv = document.getElementsByClassName("art-panel");
 
         for (let i = 0; i < artDiv.length; i++) {
@@ -153,6 +158,12 @@
                 }
             });
         }
+
+        newArtworks.forEach(artwork => {
+            let artDiv = document.getElementsByClassName("art-panel")[0];
+            artDiv.classList.add
+
+        });
 
         // Add your JavaScript code here.
         // Later, move this to an external JavaScript file for better organization.
