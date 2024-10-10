@@ -33,7 +33,9 @@ artGrid.addEventListener("click", function(event) {
     if (artPanel) {
         if (artPanel.style.backgroundColor === "red") {
             artPanel.style.backgroundColor = "";
+            if (viewedCount > 0) {
             viewedCount--;
+            }
         }
         else {
             artPanel.style.backgroundColor = "red";
