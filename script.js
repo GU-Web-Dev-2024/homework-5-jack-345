@@ -32,6 +32,8 @@ artGrid.addEventListener("click", function(event) {
     const artPanel = event.target.closest(".art-panel"); // Get the closest art panel
     if (artPanel) {
         artPanel.style.backgroundColor = artPanel.style.backgroundColor === "red" ? "" : "red";
+        viewedCount++;
+        displayCount.textContent = `Artworks Viewed: ${viewedCount}`;
     }
 });
 
@@ -61,10 +63,6 @@ document.getElementById("add-art-button").addEventListener("click", function() {
 
         // Append new art panel to the art grid
         artGrid.appendChild(artDiv);
-
-        // Increment viewed artworks counter
-        viewedCount++;
-        displayCount.textContent = `Artworks Viewed: ${viewedCount}`;
     }
 });
 
