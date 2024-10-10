@@ -26,7 +26,6 @@ let viewedCount = 0;
 let displayCount = document.getElementById("counter");
 let artGrid = document.getElementsByClassName("art-grid")[0];
 let artDiv = document.getElementsByClassName("art-panel");
-//const originalArt = artGrid.children.length;
 
 for (let i = 0; i < artDiv.length; i++) {
     artDiv[i].addEventListener("click", function(e) {
@@ -64,7 +63,7 @@ document.getElementById('add-art-button').addEventListener("click", function() {
         // Append new art panel to the art grid
         artGrid.appendChild(artDiv);
 
-// Increment viewed artworks counter
+        // Increment viewed artworks counter
         viewedCount++;
         displayCount.textContent = `Artworks Viewed: ${viewedCount}`;
     } 
@@ -73,7 +72,7 @@ document.getElementById('add-art-button').addEventListener("click", function() {
     }
 });
 
-    //reset button
+//reset button
 document.getElementById("reset-button").addEventListener("click", function() {
     while (artGrid.children.length > 3) {
         artGrid.removeChild(artGrid.lastChild);
