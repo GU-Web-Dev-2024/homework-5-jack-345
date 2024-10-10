@@ -27,35 +27,32 @@ let displayCount = document.getElementById("counter");
 let artGrid = document.getElementsByClassName("art-grid")[0];
 let artDiv = document.getElementsByClassName("art-panel");
 
-for (let i = 0; i < artDiv.length; i++) {
-    artDiv[i].addEventListener("click", function(e) {
-        if (e.target.style.backgroundColor === "red") {
-            e.target.style.backgroundColor = "";  // Reset to default background
-        } 
-        else {
-        e.target.style.backgroundColor = "red";
-        }
-    });
-};
+//highlighting clicked art divs
+artGrid.addEventListener("click", function(event) {
+    const artPanel = event.target.closest(".art-panel"); // Get the closest art panel
+    if (artPanel) {
+        artPanel.style.backgroundColor = artPanel.style.backgroundColor === "red" ? "" : "red";
+    }
+});
 
 //adding button
-document.getElementById('add-art-button').addEventListener("click", function() {
+document.getElementById("add-art-button").addEventListener("click", function() {
     if (newArtworks.length > 0) {
-        // Pop an artwork from the array
-        //let newArtwork = newArtworks.shift();
+
+        //create randomly generated index number
         let randomIndex = Math.floor(Math.random() * newArtworks.length);
         let randomArt = newArtworks[randomIndex];
 
         // Create new art panel
-        let artDiv = document.createElement('div');
-        artDiv.classList.add('art-panel');
+        let artDiv = document.createElement("div");
+        artDiv.classList.add("art-panel");
 
         // Create image and description
-        let img = document.createElement('img');
+        let img = document.createElement("img");
         img.src = randomArt.img;
         img.alt = randomArt.title;
 
-        let description = document.createElement('p');
+        let description = document.createElement("p");
         description.textContent = `${randomArt.title} by ${randomArt.artist}`;
 
         // Append image and description to the new art panel
