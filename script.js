@@ -25,8 +25,8 @@ const newArtworks = [
 let viewedCount = 0;
 let displayCount = document.getElementById("counter");
 let artGrid = document.getElementsByClassName("art-grid")[0];
-
 let artDiv = document.getElementsByClassName("art-panel");
+//const originalArt = artGrid.children.length;
 
 for (let i = 0; i < artDiv.length; i++) {
     artDiv[i].addEventListener("click", function(e) {
@@ -37,11 +37,7 @@ for (let i = 0; i < artDiv.length; i++) {
         e.target.style.backgroundColor = "red";
         }
     });
-}
-
-newArtworks.forEach(artwork => {
-    let artDiv = document.getElementsByClassName("art-panel")[0];
-});
+};
 
 //adding button
 document.getElementById('add-art-button').addEventListener("click", function() {
@@ -75,7 +71,7 @@ document.getElementById('add-art-button').addEventListener("click", function() {
     else {
         alert("No more artworks to add!");
     }
-    });
+});
 
     //reset button
 document.getElementById("reset-button").addEventListener("click", function() {
