@@ -31,8 +31,14 @@ let artDiv = document.getElementsByClassName("art-panel");
 artGrid.addEventListener("click", function(event) {
     const artPanel = event.target.closest(".art-panel"); // Get the closest art panel
     if (artPanel) {
-        artPanel.style.backgroundColor = artPanel.style.backgroundColor === "red" ? "" : "red";
-        viewedCount++;
+        if (artPanel.style.backgroundColor === "red") {
+            artPanel.style.backgroundColor = "";
+            viewedCount--;
+        }
+        else {
+            artPanel.style.backgroundColor = "red";
+            viewedCount++;
+        }
         displayCount.textContent = `Artworks Viewed: ${viewedCount}`;
     }
 });
