@@ -42,7 +42,9 @@ for (let i = 0; i < artDiv.length; i++) {
 document.getElementById('add-art-button').addEventListener("click", function() {
     if (newArtworks.length > 0) {
         // Pop an artwork from the array
-        let newArtwork = newArtworks.shift();
+        //let newArtwork = newArtworks.shift();
+        let randomIndex = Math.floor(Math.random() * newArtworks.length);
+        let randomArt = newArtworks[randomIndex];
 
         // Create new art panel
         let artDiv = document.createElement('div');
@@ -50,11 +52,11 @@ document.getElementById('add-art-button').addEventListener("click", function() {
 
         // Create image and description
         let img = document.createElement('img');
-        img.src = newArtwork.img;
-        img.alt = newArtwork.title;
+        img.src = randomArt.img;
+        img.alt = randomArt.title;
 
         let description = document.createElement('p');
-        description.textContent = `${newArtwork.title} by ${newArtwork.artist}`;
+        description.textContent = `${randomArt.title} by ${randomArt.artist}`;
 
         // Append image and description to the new art panel
         artDiv.appendChild(img);
