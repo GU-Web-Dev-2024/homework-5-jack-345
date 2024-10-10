@@ -65,9 +65,6 @@ document.getElementById("add-art-button").addEventListener("click", function() {
         // Increment viewed artworks counter
         viewedCount++;
         displayCount.textContent = `Artworks Viewed: ${viewedCount}`;
-    } 
-    else {
-        alert("No more artworks to add!");
     }
 });
 
